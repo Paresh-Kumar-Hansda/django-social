@@ -7,7 +7,9 @@
 
 {% for followed in user.profile.follows.all %}
     {% for dweet in followed.user.dweets.all %}
-       <div class="box"> <li>{{dweet.user.username}} ({{ dweet.created_at }}): {{ dweet.body }}</li></div>
+       <div class="box"> <li> {{ dweet.body }}</li>
+<span class="is-small has-text-grey-light">{{dweet.user.username}} ({{ dweet.created_at }})</span>
+      </div>
     {% endfor %}
 {% endfor %}
 
